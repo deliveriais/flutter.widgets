@@ -90,6 +90,9 @@ class ScrollablePositionedList extends StatefulWidget {
         itemPositionsNotifier = itemPositionsListener as ItemPositionsNotifier?,
         super(key: key);
 
+  //scroll speed
+  final int? extraScrollSpeed;
+
   /// Number of items the [itemBuilder] can produce.
   final int itemCount;
 
@@ -533,7 +536,7 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
       final endCompleter = Completer<void>();
       startAnimationCallback = () {
         SchedulerBinding.instance.addPostFrameCallback((_) {
-          startAnimationCallback = () {};
+          startAnimati  onCallback = () {};
           _animationController?.dispose();
           _animationController =
           AnimationController(vsync: this, duration: duration)
